@@ -19,7 +19,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.9'  # Replace with your Python version (e.g., 3.8, 3.9, etc.)
+        python-version: '3.x'  # Replace with your Python version (e.g., 3.8, 3.9, etc.)
 
     - name: Install dependencies
       run: |
@@ -40,3 +40,8 @@ jobs:
         projectKey: Kavana179_Calculator-Python  # Replace with your SonarCloud project key
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # GitHub secret containing your SonarCloud token
+        SONAR_HOST_URL: https://sonarcloud.io  # Ensure the URL is SonarCloud
+
+    - name: Check SonarCloud quality gate status
+      run: |
+        curl -u ${SONAR_TOKEN}: https://sonarcloud.io/api/qualitygates/project_status?projectKey=${{ secrets.SONAR_PROJECT_KEY }}
