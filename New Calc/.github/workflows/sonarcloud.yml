@@ -1,12 +1,10 @@
-name: SonarCloud Analysis
-
+name: Build
 on:
   push:
     branches:
-      - main   # Change this to your default branch or target branch
+      - main
   pull_request:
-    branches:
-      - main   # Runs for pull requests targeting the main branch
+    types: [opened, synchronize, reopened]
 
 jobs:
   sonarcloud:
