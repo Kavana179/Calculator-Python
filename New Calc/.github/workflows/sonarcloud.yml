@@ -36,7 +36,7 @@ jobs:
     - name: Run SonarCloud analysis
       uses: SonarSource/sonarcloud-github-action@v1
       with:
-        organization: your-sonarcloud-organization  # Replace with your SonarCloud organization name
-        projectKey: your-sonarcloud-project-key  # Replace with your SonarCloud project key
+        organization: kavana179  # Replace with your SonarCloud organization name
+        projectKey: Kavana179_Calculator-Python  # Replace with your SonarCloud project key
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # GitHub secret containing your SonarCloud token
